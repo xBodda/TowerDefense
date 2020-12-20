@@ -121,54 +121,13 @@ TowerDefense.Ui = {
         $('#build-menu').className += ' slide-down';
     },
 
-    buildTower: function (towerIndex) {
-        if (towerIndex == null) {
-
-            return;
-        }
-        if (TowerDefense.selectedObject.id == null) {
-            return;
-        }
+    buildTower: function (towerIndex) 
+    {
         var tower = TowerDefense.availableTowers[towerIndex].object();
-
-        if (tower.collisionable == true) {
-            // First check if it is allowed...
-            var testGrid = [];//TowerDefense.gridPath.slice();
-            for (var i = 0; i < TowerDefense.gridPath.length; i++) {
-                testGrid[i] = [];
-                for (var j = 0; j < TowerDefense.gridPath[i].length; j++) {
-                    var open = true;
-                    if (TowerDefense.gridPath[i][j] == false) {
-                        open = false;
-                    }
-                    testGrid[i][j] = open;
-                }
-            }
-            testGrid[TowerDefense.selectedObject.gridPosition.x][TowerDefense.selectedObject.gridPosition.y] = false;
-            TowerDefense.FindPath.postMessage(
-              {
-                  grid: testGrid,
-                  start: {
-                      x: TowerDefense.startTile.gridPosition.x,
-                      y: TowerDefense.startTile.gridPosition.y
-                  },
-                  end: {
-                      x: TowerDefense.endTile.gridPosition.x,
-                      y: TowerDefense.endTile.gridPosition.y
-                  },
-                  returnAttributes: {
-                      buildTower: towerIndex
-                  }
-              }
-            );
-        }
-        else {
             tower.create();
             tower.spawn(TowerDefense.selectedObject);
             tower.add();
             TowerDefense.deselectAll();
             TowerDefense.Ui.hideBuildMenu();
-        }
     }
-
 }

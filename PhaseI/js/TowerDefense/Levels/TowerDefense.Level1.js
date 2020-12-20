@@ -1,5 +1,5 @@
-TowerDefense.Level1 = function () {
-
+TowerDefense.Level1 = function () 
+{
     TowerDefense.Level.call( this );
 
     this.meshes = [
@@ -18,7 +18,6 @@ TowerDefense.Level1 = function () {
             'file': 'assets/levels/level-01.jpg'
         },
     ];
-
 }
 
 TowerDefense.Level1.prototype = Object.create( TowerDefense.Level.prototype );
