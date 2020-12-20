@@ -1,4 +1,4 @@
-var TowerDefense = TowerDefense || {
+var TowerDefense = TowerDefense || { 
 
     revision: 1,
     __pause: true,

@@ -60,7 +60,7 @@ TowerDefense.Level1 = function () {
         },
         {
             'key': 'level-01',
-            'file': 'assets/levels/level-01_COLOR.png'
+            'file': 'assets/levels/level-01_SPEC.png'
         },
         {
             'key': 'level-01-nrm',

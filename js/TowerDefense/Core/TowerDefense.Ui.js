@@ -1,7 +1,7 @@
 /**
 Logic Interaction with the game will be placed here.
 */
-TowerDefense.Ui = {
+TowerDefense.Ui = { 
 
     level: {},
 
